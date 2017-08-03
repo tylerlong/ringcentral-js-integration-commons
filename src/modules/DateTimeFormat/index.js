@@ -104,6 +104,9 @@ export default class DateTimeFormat extends RcModule {
         type,
       });
     }
+    if (!this._defaultFormatter) {
+      this._defaultFormatter = getIntlDateTimeFormatter();
+    }
     return this._defaultFormatter({
       utcTimestamp,
       locale,
